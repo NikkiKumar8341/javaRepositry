@@ -13,7 +13,10 @@ public class Hashmap {
         ob.put(53222244L, "ram");
         ob.put(13748392L, "ravi");
         ob.put(574838823L, "aksah");
-        System.out.println(ob);
+        int ab=ob.hashCode();
+//        int index =ob.hashcode(Key) & (n-1);
+        int index=ob.hashCode() & (16-1);
+        System.out.println(index);
         System.out.println(ob.containsKey(799709880L));
         System.out.println(ob.containsValue("ravi"));
         for (Map.Entry<Long, String> set :
