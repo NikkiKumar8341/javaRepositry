@@ -1,18 +1,12 @@
-package lamddaExpression;
+package Stream;
 
 public class Employee {
 
     private int id;
     private String name;
     private int age;
-
-    public Employee(int id, String name, int age, int salary, String city) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.salary = salary;
-        this.city = city;
-    }
+    private float salary;
+    private  String city;
 
     @Override
     public String toString() {
@@ -23,6 +17,14 @@ public class Employee {
                 ", salary=" + salary +
                 ", city='" + city + '\'' +
                 '}';
+    }
+
+    public Employee(int id, String name, int age, float salary, String city) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+        this.city = city;
     }
 
     public int getId() {
@@ -49,11 +51,11 @@ public class Employee {
         this.age = age;
     }
 
-    public int getSalary() {
+    public float getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(float salary) {
         this.salary = salary;
     }
 
@@ -64,9 +66,4 @@ public class Employee {
     public void setCity(String city) {
         this.city = city;
     }
-
-    private int salary;
-    private String city;
-
-
 }

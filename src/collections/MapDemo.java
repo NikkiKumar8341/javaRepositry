@@ -8,8 +8,38 @@ public class MapDemo {
     public static void main(String[] args) {
         Map<Integer,String> hm=new TreeMap<Integer,String>();
         hm.put(1023,"nikki");
+        System.out.println("hash code1 "+hm.hashCode());
         hm.put(1025,"nikhil");
-        System.out.println(hm);
+        System.out.println("hash code2 "+hm.hashCode());
+        hm.put(100,"Amit");
+        hm.put(101,"Vijay");
+        hm.put(102,"Rahul");
+
+        System.out.println("After invoking put() method ");
+        for(Map.Entry m:hm.entrySet()){
+            System.out.println(m.getKey()+" "+m.getValue());
+        }
+
+        hm.putIfAbsent(103, "Gaurav");
+        System.out.println("After invoking putIfAbsent() method ");
+        for(Map.Entry m:hm.entrySet()){
+            System.out.println(m.getKey()+" "+m.getValue());
+        }
+        HashMap<Integer,String> map=new HashMap<Integer,String>();
+        map.put(104,"Ravi");
+        map.putAll(hm);
+        System.out.println("After invoking putAll() method ");
+        for(Map.Entry m:map.entrySet()){
+            System.out.println(m.getKey()+" "+m.getValue());
+        }
+        map.remove(100);
+        System.out.println("Updated list of elements: "+map);
+
+        hm.replace(102, "Gaurav");
+        for(Map.Entry m:hm.entrySet())
+        {
+            System.out.println(m.getKey()+" "+m.getValue());
+        }
 
 //        Set<Map.Entry<Integer,String>> se=hm.entrySet();
 //

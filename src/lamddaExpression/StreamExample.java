@@ -31,6 +31,10 @@ public class StreamExample {
         System.out.println("====================to uppercase first letter=========================");
         List<String>lt1= li.stream().map(e->e.getName().substring(0,1).toUpperCase()+e.getName().substring(1)).collect(Collectors.toList());
         System.out.println(lt1);
+        li.stream().forEach(employee -> System.out.println(employee));
+
+
+
 
         System.out.println("==============name wise order===============================");
         List<Employee> list=li.stream().sorted(Comparator.comparing(Employee::getName,String.CASE_INSENSITIVE_ORDER)).collect(Collectors.toList());
@@ -63,9 +67,10 @@ public class StreamExample {
         for (int i : arr1) {
             System.out.print(i+" ");
         }
+
         // Sorting array elements parallel and passing start, end index
         Arrays.parallelSort(arr1,0,2);
-        System.out.println("\nArray elements after sorting");
+        System.out.println("\n Array elements after sorting");
         // Iterating array elements
         for (int i : arr1) {
             System.out.print(i+" ");
